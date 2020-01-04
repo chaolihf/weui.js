@@ -218,9 +218,20 @@ function uploader(selector, options) {
         options.onQueued = function(file){
             if(!onQueued.call(file)){
                 const $file = $uploader.find('[data-id="' + file.id + '"]');
-                $file.css({
-                    backgroundImage: 'url("' + (file.base64 || file.url) + '")'
-                });
+                if(file.type.indexOf("image/")!=-1){
+                    $file.css({
+                        backgroundImage: 'url("' + (file.base64 || file.url) + '")'
+                    });
+                    $file.attr("data-url",file.base64||file.url);
+                }
+                else{
+                    $file.css({
+                        backgroundColor: "white"
+                    });
+                    let $fileName = $file.find('.ahui-uploader-filename');
+                    $fileName.html(file.name);
+                    $file.attr("data-url",file.url);
+                }
                 if(!options.auto) {
                     clearFileStatus($uploader, file.id);
                 }

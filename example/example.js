@@ -391,14 +391,14 @@ weui.uploader('#uploader', {
         quality: .8
     },
     onBeforeQueued: function(files) {
-        if(["image/jpg", "image/jpeg", "image/png", "image/gif"].indexOf(this.type) < 0){
-            weui.alert('请上传图片');
-            return false;
-        }
-        if(this.size > 10 * 1024 * 1024){
-            weui.alert('请上传不超过10M的图片');
-            return false;
-        }
+        // if(["image/jpg", "image/jpeg", "image/png", "image/gif"].indexOf(this.type) < 0){
+        //     weui.alert('请上传图片');
+        //     return false;
+        // }
+        // if(this.size > 10 * 1024 * 1024){
+        //     weui.alert('请上传不超过10M的图片');
+        //     return false;
+        // }
         if (files.length > 5) { // 防止一下子选中过多文件
             weui.alert('最多只能上传5张图片，请重新选择');
             return false;
@@ -442,12 +442,8 @@ document.querySelector('#uploaderFiles').addEventListener('click', function(e){
     }
     if(!target) return;
 
-    var url = target.getAttribute('style') || '';
+    var url = target.getAttribute('data-url') || '';
     var id = target.getAttribute('data-id');
-
-    if(url){
-        url = url.match(/url\((.*?)\)/)[1].replace(/"/g, '');
-    }
     var gallery = weui.gallery(url, {
         className: 'custom-name',
         onDelete: function(){
