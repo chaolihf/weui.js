@@ -5162,7 +5162,7 @@
 /* 33 */
 /***/ (function(module, exports) {
 
-	module.exports = "<div class=\"weui-gallery <%= className %>\"> <span class=weui-gallery__img style=\"background-image:url(<%= imageUrl %>)\"></span> <div class=weui-gallery__opr> <a href=javascript: class=ahui-gallery__download1 title=删除> <i class=\"weui-icon-delete weui-icon_gallery-delete\"></i> </a> <a href=\"<%= downloadUrl %>\" class=ahui-gallery__download2 target=_blank title=下载 style=margin-left:30px> <i class=\"weui-icon-download weui-icon_gallery-delete\"></i> </a> </div> </div> ";
+	module.exports = "<div class=\"weui-gallery <%= className %>\"> <span class=weui-gallery__img style=\"background-image:url(<%= imageUrl %>)\"></span> <div class=weui-gallery__opr> <a href=javascript: class=ahui-gallery__download1 title=删除> <i class=\"weui-icon-delete weui-icon_gallery-delete\"></i> </a> <a href=\"<%= downloadUrl %>\" class=ahui-gallery__download2 title=下载 style=margin-left:30px> <i class=\"weui-icon-download weui-icon_gallery-delete\"></i> </a> </div> </div> ";
 
 /***/ }),
 /* 34 */
